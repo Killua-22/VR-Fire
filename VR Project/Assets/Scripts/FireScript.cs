@@ -42,6 +42,8 @@ public class FireScript : MonoBehaviour
 
     public bool TryExtinguish(float amount)
     {
+        timeLastWatered = Time.deltaTime;
+
         currentIntensity -= amount;
 
         ChangeIntensity();

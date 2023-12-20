@@ -24,19 +24,12 @@ public class FoamTrigger : MonoBehaviour
         
     }
 
-   
-
     void Update()
     {
         
         if (RightTrigger.action.ReadValue<float>() > 0.1f)
         {
             foam.Play();
-            //if(Physics.Raycast(endAnchor.transform.position, endAnchor.transform.forward, out RaycastHit hit, 100f) && hit.collider.TryGetComponent(out FireScript fire))
-            //{
-            //    fire.TryExtinguish(amountExtinguishedperSecond * Time.deltaTime);
-            //    Debug.Log(hit.collider.name);
-            //}
             isFoamPlaying = true;
         }
 
