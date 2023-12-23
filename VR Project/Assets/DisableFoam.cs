@@ -19,7 +19,8 @@ public class DisableFoam : MonoBehaviour
     public void OnSelect()
     {
         Foam.SetActive(true);
-       //interactable.interactionLayers = LayerMask.GetMask("Right Controller")
+        interactable.interactionLayers = LayerMask.GetMask("Right Controller");
+       
 
     }
     void Update()
