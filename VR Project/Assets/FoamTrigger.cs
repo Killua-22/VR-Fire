@@ -17,17 +17,24 @@ public class FoamTrigger : MonoBehaviour
     XRGrabInteractable grabbable;
     public GameObject endAnchor;
     private bool isFoamPlaying = false;
+    DisableFoam df;
 
     void Start()
     {
         grabbable = GetComponent<XRGrabInteractable>();
-        
+        df = GetComponent<DisableFoam>();
     }
 
     void Update()
     {
-        
-        if (RightTrigger.action.ReadValue<float>() > 0.1f)
+
+        if (df.RightSpray && !(df.LeftSpray) && RightTrigger.action.ReadValue<float>() > 0.1f)
+        {
+            foam.Play();
+            isFoamPlaying = true;
+        }
+
+        else if (df.LeftSpray && !(df.RightSpray) && LeftTrigger.action.ReadValue<float>() > 0.1f)
         {
             foam.Play();
             isFoamPlaying = true;
