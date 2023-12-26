@@ -18,6 +18,9 @@ public class FoamTrigger : MonoBehaviour
     public GameObject endAnchor;
     private bool isFoamPlaying = false;
     DisableFoam df;
+    public GameObject pivot;
+    Quaternion targetRotation;
+    float triggerValue;
 
     void Start()
     {
@@ -32,6 +35,10 @@ public class FoamTrigger : MonoBehaviour
         {
             foam.Play();
             isFoamPlaying = true;
+            //triggerValue = RightTrigger.action.ReadValue<float>();
+            
+            //targetRotation = Quaternion.Euler(pivot.transform.eulerAngles.x, pivot.transform.eulerAngles.y, pivot.transform.eulerAngles.z + 14.5f);
+            //pivot.transform.rotation = targetRotation;
         }
 
         else if (df.LeftSpray && !(df.RightSpray) && LeftTrigger.action.ReadValue<float>() > 0.1f)

@@ -48,6 +48,7 @@ public class DisableFoam : MonoBehaviour
 
     public void OnExit()
     {
+        Foam.SetActive(false);
         Debug.Log("Fire Extinguisher deselected");
         interactable.interactionLayers = InteractionLayerMask.GetMask("Direct Grab");
     }
